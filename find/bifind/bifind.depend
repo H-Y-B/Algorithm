@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1568537263 source:i:\github\algorithm\find\bifind\sort.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
+1568539485 source:i:\github\algorithm\find\bifind\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"sort.h"
+
+1568538547 i:\github\algorithm\find\bifind\sort.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
