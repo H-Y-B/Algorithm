@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1569075736 source:i:\github\algorithm\sort\merge\merge\main.c
+	<stdio.h>
+	<stdlib.h>
+
