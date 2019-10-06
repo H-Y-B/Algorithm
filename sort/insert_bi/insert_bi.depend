@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1570347287 source:g:\github\algorithm\sort\insert_bi\main.c
+	<stdio.h>
+	<stdlib.h>
+	"sort.h"
+	<time.h>
+
+1570347268 g:\github\algorithm\sort\insert_bi\sort.h
+	<stdio.h>
+	<stdlib.h>
+
+1570347293 source:g:\github\algorithm\sort\insert_bi\sort.c
+	<stdio.h>
+	<stdlib.h>
+
