@@ -20,6 +20,8 @@
 /*
     不会因为等于某一个值而停止查找，
     它将查找整个序列直到left<=right条件不满足而得到插入的位置
+
+    找到了相等的值后，可以退出
 */
 int bifind(int array[],int num,int left,int right)
 {
