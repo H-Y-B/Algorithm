@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1570419753 source:g:\github\algorithm\others\select_part\select_part\main.c
+	<stdio.h>
+	<stdlib.h>
+	"select.h"
+
+1570419762 g:\github\algorithm\others\select_part\select_part\select.h
+	<stdio.h>
+	<stdlib.h>
+
+1570419683 source:g:\github\algorithm\others\select_part\select_part\select.c
+	<stdio.h>
+	<stdlib.h>
+
