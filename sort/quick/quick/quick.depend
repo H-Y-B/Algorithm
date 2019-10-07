@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1570412216 source:g:\github\algorithm\sort\quick\quick\main.c
+	<stdio.h>
+	<stdlib.h>
+	"sort.h"
+
+1570412199 g:\github\algorithm\sort\quick\quick\sort.h
+	<stdio.h>
+	<stdlib.h>
+
+1570412128 source:g:\github\algorithm\sort\quick\quick\sort.c
+	<stdio.h>
+	<stdlib.h>
+
