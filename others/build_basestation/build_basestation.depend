@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1571470878 source:g:\github\algorithm\others\build_basestation\build_basestation.c
+	<stdio.h>
+	<stdlib.h>
+
+1571470714 source:g:\github\algorithm\others\build_basestation\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"sort.h"
+	"build_basestation.h"
+
+1571468440 g:\github\algorithm\others\build_basestation\sort.h
+	<stdio.h>
+	<stdlib.h>
+
+1571470178 g:\github\algorithm\others\build_basestation\build_basestation.h
+	<stdio.h>
+	<stdlib.h>
+
+1571468257 source:g:\github\algorithm\others\build_basestation\sort.c
+	<stdio.h>
+	<stdlib.h>
+
