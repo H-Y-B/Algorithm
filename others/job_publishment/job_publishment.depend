@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1571476649 source:g:\github\algorithm\others\job_publishment\sort.c
+	<stdio.h>
+	<stdlib.h>
+
