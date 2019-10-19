@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1571474984 source:g:\github\algorithm\others\check_process\check_process.c
+	<stdio.h>
+	<stdlib.h>
+
+1571473717 source:g:\github\algorithm\others\check_process\sort.c
+	<stdio.h>
+	<stdlib.h>
+
+1571475110 source:g:\github\algorithm\others\check_process\main.c
+	<stdio.h>
+	<stdlib.h>
+	"sort.h"
+	"check_process.h"
+
+1571473731 g:\github\algorithm\others\check_process\sort.h
+	<stdio.h>
+	<stdlib.h>
+
+1571474299 g:\github\algorithm\others\check_process\check_process.h
+	<stdio.h>
+	<stdlib.h>
+
