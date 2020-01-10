@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1578642417 source:g:\github\algorithm\intelligent\tsp\tsp\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	<math.h>
+
