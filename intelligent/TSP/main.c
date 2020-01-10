@@ -4,7 +4,7 @@
 #include<time.h>
 #include<math.h>
 
-#define T0 90000.0  // 初始温度
+#define T0 20000.0  // 初始温度
 #define T_end (1e-8)
 #define q  0.98     // 退火系数
 #define L 1000      // 每个温度时的迭代次数，即链长（内循环终止条件）
@@ -43,7 +43,7 @@ double distance(double * city1,double * city2)
 }
 
 //计算路径长度
-double path_len(int * arr)
+double CalCulate_length(int * arr)
 {
     double path = 0; // 初始化路径长度
     int index = *arr; // 定位到第一个数字(城市序号)
@@ -64,16 +64,16 @@ double path_len(int * arr)
 }
 
 
-// 初始化函数
+//初始化函数
 void init()
 {
     for(int i=0;i<N;i++)
         city_list[i] = i+1;  // 初始化一个解
 }
 
-// 产生一个新解
-// 此处采用随机交叉两个位置的方式产生新的解
-void create_new()
+
+//2-OPT交换法生成邻居
+void getNewSolution()
 {
     double r1 = ((double)rand())/(RAND_MAX+1.0);
     double r2 = ((double)rand())/(RAND_MAX+1.0);
@@ -107,11 +107,11 @@ int main(void)
          for(int i=0;i<L;i++)
          {
              memcpy(city_list_copy,city_list,N*sizeof(int)); // 复制数组
-             create_new(); // 产生新解
+             getNewSolution(); // 产生新解
 
 
-             f1 = path_len(city_list_copy);//旧解的路径
-             f2 = path_len(city_list);     //新解的路径
+             f1 = CalCulate_length(city_list_copy);//旧解的路径
+             f2 = CalCulate_length(city_list);     //新解的路径
              df = f2 - f1;
 
              // 以下是Metropolis准则
@@ -144,7 +144,7 @@ int main(void)
     printf("%d\n",city_list[0]);
 
 
-    double len = path_len(city_list); // 最优路径长度
+    double len = CalCulate_length(city_list); // 最优路径长度
     printf("最优路径长度为:%lf\n",len);
     printf("程序运行耗时:%lf秒.\n",duration);
     return 0;
