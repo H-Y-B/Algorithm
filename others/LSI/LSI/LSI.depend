@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1572357916 source:g:\github\algorithm\others\lsi\lsi\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
