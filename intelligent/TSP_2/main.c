@@ -5,19 +5,17 @@
 #include<math.h>
 
 
-#define nCities 5       //城市数量
-#define SPEED 0.7        //退火速度
+#define nCities 99       //城市数量
+#define SPEED 0.98        //退火速度
 #define INITIAL_TEMP 1000 //初始温度
 #define L 100*nCities     //Markov链的长度
 typedef enum __bool { false = 0, true = 1, } bool;
 
-
 struct unit{
     double length;
-    double length_table[nCities][nCities];
+    double length_table[nCities+1][nCities+1];
     int path[nCities];
 };
-
 
 //2-OPT交换法生成邻居
 void getNewSolution(struct unit* p)
@@ -46,17 +44,15 @@ void CalCulate_length(struct unit *p)
 
 bool Accept(struct unit* best,struct unit* temp,double t)
 {
-
     if(best->length > temp->length)
         return true;
     else
     {
-        int q=(int)(exp((best->length-temp->length)/t)*100);
+        int q=(int)(exp((best->length - temp->length)/t)*100);
         int r=rand()%101;
         if(q>r)
             return true;
     }
-
     return false;
 }
 
@@ -71,7 +67,7 @@ void generate(struct unit *temp)
             if(i==j)
                 temp->length_table[i][j]=0;
             else
-                temp->length_table[i][j]=temp->length_table[j][i]= (double)(rand()%9999);
+                temp->length_table[i][j]=temp->length_table[j][i]= (double)(rand()%999);
         }
     }
 
@@ -83,7 +79,7 @@ void generate(struct unit *temp)
 void SA_TSP(){
     srand(time(NULL));
 
-    double r=SPEED;
+    double r=0.98;//SPEED;
     double t=INITIAL_TEMP;
     const double t_min=0.001;
 
@@ -95,8 +91,8 @@ void SA_TSP(){
 
     memcpy(&best,&temp,sizeof(temp));
 
-    while(t>t_min){
-
+    while(t>t_min)
+    {
         for(int i=0;i<L;i++)
         {
             getNewSolution(&temp);
@@ -106,15 +102,9 @@ void SA_TSP(){
                 memcpy(&best,&temp,sizeof(temp));
             else
                 memcpy(&temp,&best,sizeof(temp));
-
         }
-        for(int i=0;i<nCities;i++){
-        printf("%d-->",best.path[i]);
-        }
-        printf("%d\n",best.path[0]);
-        printf("%huangyubiao\n");
-
         t=t*r;
+
     }
 
     printf("最优路径长度为:%f\n",best.length);
@@ -123,7 +113,6 @@ void SA_TSP(){
         printf("%d-->",best.path[i]);
     }
         printf("%d\n",best.path[0]);
-
 
     return;
 }
@@ -137,7 +126,6 @@ int main()
 
     double duration = ((double)(finish-start))/CLOCKS_PER_SEC; // 计算时间
     printf("程序运行耗时:%lf秒.\n",duration);
-
 
     return 0;
 }
