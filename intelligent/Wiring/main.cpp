@@ -199,7 +199,9 @@ int main()
 
     cout<<"即将进入FindPath  1"<<endl;
 
-    DWORD startTime,stopTime;
+    time_t startTime,stopTime;
+    startTime = clock(); // 程序运行开始计时
+
     srand((unsigned)time(NULL));
     int time=0;
     start1  =start;
@@ -219,7 +221,7 @@ int main()
 
     bool result =FindPath(start1,finish1,path_len1,path1,grid1,m,n);
 
-    while(result==false && time<200)
+    while(result==false && time<1000)
     {
         start1=start;
         finish1=finish;
@@ -237,7 +239,7 @@ int main()
         result=FindPath(start1,finish1,path_len1,path1,grid1,m,n);
     }
 
-    stopTime=GetTickCount();
+    stopTime = clock(); // 退火过程结束
 
     if(result){
         cout<<"----------------------------"<<endl;
@@ -292,8 +294,9 @@ int main()
         cout<<endl;
         time++;
         cout<<"布线完毕，查找"<<time<<"次"<<endl;
-        printf("运行时间: %11d ms\n",stopTime-startTime);
 
+        double duration = ((double)(stopTime-startTime))/CLOCKS_PER_SEC; // 计算时间
+        printf("程序运行耗时:%lf秒.\n",duration);
 
 
     }
