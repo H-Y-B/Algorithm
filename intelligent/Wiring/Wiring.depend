@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1578880027 source:g:\github\algorithm\intelligent\wiring\main.cpp
+	<iostream>
+	<queue>
+	<time.h>
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<math.h>
+
