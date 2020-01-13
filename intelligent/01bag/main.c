@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <time.h>
 
 #define popsize 200   //种群的规模
 #define pc      0.618 //交配概率
 #define pm      0.03  //变异概率
-#define lchrom  50    //染色体长度
+#define lchrom  90    //染色体长度
 #define maxgen  1000  //最大进化代数
 typedef enum __bool { false = 0, true = 1, } bool;
 
@@ -245,6 +245,12 @@ int main()
     double oldmax;
     gen=0;
     read_infor(); //读入背包信息
+
+
+    time_t start,finish;
+
+    start = clock();
+
     initpop();
     memcpy(&newpop,&oldpop,popsize*sizeof(struct population));
     statistics(newpop);  //统计新生种群的信息
@@ -276,7 +282,10 @@ int main()
         memcpy(&oldpop,&newpop,popsize*sizeof(struct population));
     }
 
-    printf("It is over.");
+    printf("It is over.\n");
+    finish = clock();
 
+    double duration = ((double)(finish-start))/CLOCKS_PER_SEC; // 计算时间
+    printf("程序运行耗时:%lf秒.\n",duration);
     return 0;
 }
