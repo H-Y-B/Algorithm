@@ -5,7 +5,7 @@
 #include<math.h>
 
 
-#define nCities 99       //城市数量
+#define nCities 90       //城市数量
 #define SPEED 0.98        //退火速度
 #define INITIAL_TEMP 1000 //初始温度
 #define L 100*nCities     //Markov链的长度
